@@ -13,13 +13,12 @@ import threading
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-
 from KEYS import DISCORD_KEY
 
 # setup
 s = sched.scheduler(time.time, time.sleep)
-if os.getenv('BOTKEY') is None:
-    load_dotenv('keys.env')
+# if os.getenv('BOTKEY') is None:
+#     load_dotenv('keys.env')
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
 # Think of it like a dot path import
