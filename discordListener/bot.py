@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 
-""" stock bot """
+""" ursla """
 
-import asyncio
 import logging
 import os
 import sched
 import time
 import traceback
-import threading
 
 import discord
 from discord.ext import commands
@@ -42,6 +40,7 @@ if __name__ == '__main__':
             traceback.print_exc()
 
 # on start
+
 @bot.event
 async def on_ready():
     logger.info(f'Logged in as: {bot.user.name} - {bot.user.id}')
