@@ -14,6 +14,8 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
+from KEYS import DISCORD_KEY
+
 # setup
 s = sched.scheduler(time.time, time.sleep)
 if os.getenv('BOTKEY') is None:

@@ -64,3 +64,4 @@ keys.json
 src/
 symbolList.json
 guildsToAdvertise.json
+discordListener/KEYS.py
