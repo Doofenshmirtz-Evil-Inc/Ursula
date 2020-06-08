@@ -14,12 +14,12 @@ from dotenv import load_dotenv
 
 # setup
 s = sched.scheduler(time.time, time.sleep)
-# if os.getenv('BOTKEY') is None:
-#     load_dotenv('keys.env')
+if os.getenv('BOTKEY') is None:
+    load_dotenv('keys.env')
 
 # Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
 # Think of it like a dot path import
-initial_extensions = ['cogs.member', 'cogs.simple']
+initial_extensions = ['cogs.member', 'cogs.simple', 'cogs.call']
 
 logging.basicConfig(level=logging.INFO, format=(
     '%(asctime)s %(levelname)s %(name)s | %(message)s'))

@@ -1,7 +1,7 @@
 import random
+import logging
 
 import discord
-import logging
 
 from discord.ext import commands
 
