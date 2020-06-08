@@ -10,7 +10,7 @@ services:
         networks:
             - container-network
         ports:
-            - 9001:9001
+            - 8080:8080
         depends_on: 
             - py-test
         restart: always
