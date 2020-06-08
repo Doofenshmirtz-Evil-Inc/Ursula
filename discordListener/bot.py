@@ -4,8 +4,6 @@
 
 import logging
 import os
-import sched
-import time
 import traceback
 
 import discord
@@ -13,7 +11,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 # setup
-s = sched.scheduler(time.time, time.sleep)
 if os.getenv('BOTKEY') is None:
     load_dotenv('keys.env')
 
@@ -21,11 +18,9 @@ if os.getenv('BOTKEY') is None:
 # Think of it like a dot path import
 initial_extensions = ['cogs.member', 'cogs.simple', 'cogs.call']
 
-logging.basicConfig(level=logging.INFO, format=(
-    '%(asctime)s %(levelname)s %(name)s | %(message)s'))
-
+logging.basicConfig(level=logging.INFO, format=('%(asctime)s %(levelname)s %(name)s | %(message)s'))
 logger = logging.getLogger('bot')
-logger.setLevel(logging.DEBUG)
+logger.setLevel('DEBUG')
 
 description = '''ursla listens, ursla knows all'''
 bot = commands.Bot(command_prefix='$', description=description)
@@ -39,12 +34,21 @@ if __name__ == '__main__':
             logger.exception(f'Failed to load {extension}.')
             traceback.print_exc()
 
-# on start
+async def findGuilds(bot=bot):
+        for guild in bot.guilds:
+            logger.debug(guild.voice_channels)
+            for vc in guild.voice_channels:
+                logger.debug(vc)
+                for voiceState in vc.voice_states:
+                    logger.debug(voiceState)
 
+# on start
 @bot.event
 async def on_ready():
     logger.info(f'Logged in as: {bot.user.name} - {bot.user.id}')
     logger.info(f'Version: {discord.__version__}')
+
+    await findGuilds()
 
 # login
 bot.run(os.getenv('BOTKEY'))
