@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+    js-test:
+        build:
+              context: jsIMG/
+              dockerfile: Dockerfile
+        container_name: js-test
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - container-network
+        ports:
+            - 9001:9001
+        depends_on: 
+            - py-test
+        restart: always
+        command: /bin/sh -c "node main.js"
+    py-test:
+        build:
+            context: pythonIMG/
+            dockerfile: Dockerfile
+        container_name: py-test
+        volumes:
+            - ./:/app/
+        environment:
+            - FLASK_APP=/app/app.py
+            - LC_ALL=C.UTF-8
+            - LANG=C.UTF-8
+        command: bash -c "python main.py"
+        restart: always
+        networks:
+            container-network:
+                aliases:
+                    - flask-app
+        ports:
+            - 8080:5000
+networks:
+    container-network:
