@@ -63,3 +63,5 @@ keys.env
 src/
 
 node_modules
+ffmpeg.exe
+*.wav

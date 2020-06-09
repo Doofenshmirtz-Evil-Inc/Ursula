@@ -5,7 +5,6 @@
 import logging
 import os
 import traceback
-import time
 from pathlib import Path
 
 import discord
@@ -40,7 +39,7 @@ async def activeVoiceChannels(bot=bot):
     activeVCS = []
     for guild in bot.guilds:
         for vc in guild.voice_channels:
-            if len(vc.members) > 0: # we dont want just one person sitting in silence
+            if len(vc.members) > 0: # we dont want just one person sitting in silence (0 is normally 1)
                 # since theres people in the vc, check if theyre active
                 logger.debug(f'voice channel {vc.name} in {vc.guild.name} has {len(vc.members)} users within, checking voice state')
                 activeMembers = []
