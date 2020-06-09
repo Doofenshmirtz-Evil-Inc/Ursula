@@ -5,6 +5,7 @@
 import logging
 import os
 import traceback
+import time
 from pathlib import Path
 
 import discord
@@ -39,13 +40,13 @@ async def activeVoiceChannels(bot=bot):
     activeVCS = []
     for guild in bot.guilds:
         for vc in guild.voice_channels:
-            if len(vc.members) > 1: # we dont want just one person sitting in silence
+            if len(vc.members) > 0: # we dont want just one person sitting in silence
                 # since theres people in the vc, check if theyre active
                 logger.debug(f'voice channel {vc.name} in {vc.guild.name} has {len(vc.members)} users within, checking voice state')
                 activeMembers = []
                 for vcMember in vc.members:
                     if vcMember.voice.deaf == False and vcMember.voice.mute == False and vcMember.voice.self_mute == False and vcMember.voice.self_deaf == False:   
-                        logger.debug(f'{vcMember.mention} is active')
+                        logger.debug(f'{vcMember.name} is active')
                         activeMembers.append(vcMember)
 
                 activeVCS.append(vc)
@@ -53,13 +54,28 @@ async def activeVoiceChannels(bot=bot):
     logger.debug(f'found {len(activeVCS)} active voice channels')
     return activeVCS
 
+async def disconnectAll():
+    vcs = bot.voice_clients
+    for vc in vcs:
+        await vc.disconnect()
+
 # on start
 @bot.event
 async def on_ready():
     logger.info(f'Logged in as: {bot.user.name} - {bot.user.id}')
     logger.info(f'Version: {discord.__version__}')
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game('TOM FONGUS\'s CRAaaaZY Racoon (2002)'))
 
-    await activeVoiceChannels()
+    # cleanup if it crashed or something earlier
+    await disconnectAll()
+
+    vcs = await activeVoiceChannels()
+    for vc in vcs:
+        voiceClient = await vc.connect()
+        voiceClient.play(discord.FFmpegPCMAudio(executable='./ffmpeg.exe', source='./dong.mp3'))
+        while voiceClient.is_playing():
+            time.sleep(0.5)
+        await disconnectAll()
 
 # login
-bot.run(os.getenv('BOTKEY'))
+bot.run(os.getenv('BOTKEY'), bot=True)
