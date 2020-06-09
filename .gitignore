@@ -61,3 +61,5 @@ target/
 .vscode/
 keys.env
 src/
+
+node_modules
