@@ -68,14 +68,7 @@ async def on_ready():
 
     # cleanup if it crashed or something earlier
     await disconnectAll()
-
     vcs = await activeVoiceChannels()
-    for vc in vcs:
-        voiceClient = await vc.connect()
-        voiceClient.play(discord.FFmpegPCMAudio(executable='./ffmpeg.exe', source='./dong.mp3'))
-        while voiceClient.is_playing():
-            time.sleep(0.5)
-        await disconnectAll()
 
 # login
 bot.run(os.getenv('BOTKEY'), bot=True)
