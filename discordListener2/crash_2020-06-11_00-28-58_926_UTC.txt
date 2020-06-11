@@ -1,0 +1,534 @@
+Date time: Wed Jun 10 2020 20:28:58 GMT-0400 (Eastern Daylight Time)
+-----------------------
+execPath: C:\Program Files\nodejs\node.exe
+-----------------------
+argv: C:\Program Files\nodejs\node.exe, D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\index.js
+-----------------------
+current directory: D:\CodeProjects\VisualStudio repos\Ursula\discordListener2
+-----------------------
+env:
+{
+  ADSK_3DSMAX_x64_2020: 'D:\\Program Files\\Autodesk\\3ds Max 2020\\',
+  ALLUSERSPROFILE: 'C:\\ProgramData',
+  APPDATA: 'C:\\Users\\Aidan\\AppData\\Roaming',
+  CommonProgramFiles: 'C:\\Program Files\\Common Files',
+  'CommonProgramFiles(x86)': 'C:\\Program Files (x86)\\Common Files',
+  CommonProgramW6432: 'C:\\Program Files\\Common Files',
+  COMPOSE_CONVERT_WINDOWS_PATHS: 'true',
+  COMPUTERNAME: 'PATTHEPC',
+  ComSpec: 'C:\\WINDOWS\\system32\\cmd.exe',
+  DriverData: 'C:\\Windows\\System32\\Drivers\\DriverData',
+  FLEXLM_TIMEOUT: '1500000',
+  HOMEDRIVE: 'C:',
+  HOMEPATH: '\\Users\\Aidan',
+  INTEL_DEV_REDIST: 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\',
+  LOCALAPPDATA: 'C:\\Users\\Aidan\\AppData\\Local',
+  LOGONSERVER: '\\\\PATTHEPC',
+  MIC_LD_LIBRARY_PATH: 'C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic',
+  NUMBER_OF_PROCESSORS: '8',
+  OneDrive: 'C:\\Users\\Aidan\\OneDrive',
+  OneDriveConsumer: 'C:\\Users\\Aidan\\OneDrive',
+  OS: 'Windows_NT',
+  Path: 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\Aidan\\AppData\\Local\\Microsoft\\WindowsApps;C:\\MinGW\\bin;D:\\Program Files\\Microsoft VS Code\\bin;D:\\OpenCV\\opencv\\build\\x64\\vc15\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files (x86)\\Nmap;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Python\\Python38\\Scripts;C:\\Program Files\\Git\\cmd;C:\\webdrivers;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\nodejs\\;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Python\\Python38\\;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Python\\Python38\\Scripts;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Aidan\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Aidan\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Aidan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Aidan\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files (x86)\\Nmap;;C:\\Users\\Aidan\\AppData\\Local\\hyper\\app-3.0.2\\resources\\bin;C:\\Users\\Aidan\\AppData\\Roaming\\npm',
+  PATHEXT: '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL',
+  PROCESSOR_ARCHITECTURE: 'AMD64',
+  PROCESSOR_IDENTIFIER: 'Intel64 Family 6 Model 60 Stepping 3, GenuineIntel',
+  PROCESSOR_LEVEL: '6',
+  PROCESSOR_REVISION: '3c03',
+  ProgramData: 'C:\\ProgramData',
+  ProgramFiles: 'C:\\Program Files',
+  'ProgramFiles(x86)': 'C:\\Program Files (x86)',
+  ProgramW6432: 'C:\\Program Files',
+  PSModulePath: 'C:\\Users\\Aidan\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules',
+  PUBLIC: 'C:\\Users\\Public',
+  SESSIONNAME: 'Console',
+  SystemDrive: 'C:',
+  SystemRoot: 'C:\\WINDOWS',
+  TEMP: 'C:\\Users\\Aidan\\AppData\\Local\\Temp',
+  TMP: 'C:\\Users\\Aidan\\AppData\\Local\\Temp',
+  USERDOMAIN: 'PATTHEPC',
+  USERDOMAIN_ROAMINGPROFILE: 'PATTHEPC',
+  USERNAME: 'Aidan',
+  USERPROFILE: 'C:\\Users\\Aidan',
+  windir: 'C:\\WINDOWS',
+  TERM_PROGRAM: 'vscode',
+  TERM_PROGRAM_VERSION: '1.45.1',
+  LANG: 'en_US.UTF-8',
+  COLORTERM: 'truecolor',
+  VSCODE_GIT_IPC_HANDLE: '\\\\.\\pipe\\vscode-git-f2cfa7c273-sock',
+  GIT_ASKPASS: 'c:\\Users\\Aidan\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh',
+  VSCODE_GIT_ASKPASS_NODE: 'C:\\Users\\Aidan\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe',
+  VSCODE_GIT_ASKPASS_MAIN: 'c:\\Users\\Aidan\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+}
+-----------------------
+pid: 22460
+-----------------------
+process title: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe
+-----------------------
+uptime (sec): 0.2710367
+-----------------------
+arch: x64
+-----------------------
+versions:
+{
+  node: '12.18.0',
+  v8: '7.8.279.23-node.37',
+  uv: '1.37.0',
+  zlib: '1.2.11',
+  brotli: '1.0.7',
+  ares: '1.16.0',
+  modules: '72',
+  nghttp2: '1.41.0',
+  napi: '6',
+  llhttp: '2.0.4',
+  http_parser: '2.9.3',
+  openssl: '1.1.1g',
+  cldr: '37.0',
+  icu: '67.1',
+  tz: '2019c',
+  unicode: '13.0'
+}
+-----------------------
+memory usage:
+{
+  rss: 39854080,
+  heapTotal: 17809408,
+  heapUsed: 9483112,
+  external: 1463729,
+  arrayBuffers: 64849
+}
+-----------------------
+require.cache:
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\Util.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\FormData.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\mime.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\mimes.json
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\mimeOfBuffer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\package.json
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\transports\file.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\snekfetch\src\node\transports\ResponseStream.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\Constants.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\package.json
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\Client.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\Permissions.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\BitField.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\RESTManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\UserAgentManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\RESTMethods.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\long\src\long.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\Collection.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\shared\resolvePermissions.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\RichEmbed.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Attachment.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\MessageEmbed.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\User.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\interfaces\TextBasedChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Message.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\MessageMentions.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\MessageAttachment.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\MessageReaction.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Emoji.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\Snowflake.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\ReactionEmoji.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\ReactionCollector.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\interfaces\Collector.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\MessageFlags.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\MessageCollector.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Presence.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\GuildMember.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Role.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Invite.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\PartialGuild.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\PartialGuildChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Webhook.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\UserProfile.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\UserConnection.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\OAuth2Application.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Team.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\TeamMember.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Channel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\GroupDMChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Guild.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\Integration.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\util\SystemChannelFlags.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\VoiceRegion.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\GuildAuditLogs.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\RequestHandlers\Sequential.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\RequestHandlers\RequestHandler.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\DiscordAPIError.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\RequestHandlers\Burst.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\rest\APIRequest.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\ClientDataManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\GuildChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\PermissionOverwrites.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\TextChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\VoiceChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\CategoryChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\NewsChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\StoreChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\DMChannel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\ClientManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\websocket\WebSocketConnection.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\websocket\packets\WebSocketPacketManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\websocket.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\permessage-deflate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\async-limiter\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\buffer-util.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\constants.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\event-target.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\extension.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\receiver.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\validation.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\sender.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\ws\lib\websocket-server.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\ClientDataResolver.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\ClientVoiceManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\VoiceConnection.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\VoiceWebSocket.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\util\SecretKey.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\VoiceUDPClient.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\player\AudioPlayer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\prism-media\src\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\prism-media\src\Prism.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\prism-media\src\transcoders\MediaTranscoder.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\prism-media\src\transcoders\ffmpeg\Ffmpeg.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\prism-media\src\transcoders\ffmpeg\FfmpegProcess.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\dispatcher\StreamDispatcher.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\util\VolumeInterface.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\VoiceBroadcast.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\opus\OpusEngineList.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\opus\DiscordJsOpusEngine.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\opus\BaseOpusEngine.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\opus\NodeOpusEngine.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\opus\OpusScriptEngine.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\util\Secretbox.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\tweetnacl\nacl-fast.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\receiver\VoiceReceiver.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\receiver\VoiceReadable.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\util\SingleSilence.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\voice\util\Silence.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\websocket\WebSocketManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\ActionsManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\sharding\ShardClientUtil.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\sharding\Shard.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\sharding\ShardingManager.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\WebhookClient.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\ClientUser.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\ClientUserSettings.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\ClientUserGuildSettings.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\structures\ClientUserChannelOverride.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\client.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\registry.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\base.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\argument.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\TemplateTag\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\TemplateTag\TemplateTag.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\helpers\taggedTemplateLiteral.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\core-js\object\define-properties.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\fn\object\define-properties.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\es6.object.define-properties.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_export.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_global.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_core.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_ctx.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_a-function.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_hide.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-dp.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_an-object.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_is-object.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_ie8-dom-define.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_descriptors.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_fails.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_to-primitive.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_property-desc.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-dps.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-keys.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-keys-internal.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_has.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_to-iobject.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_iobject.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_cof.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_defined.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_array-includes.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_to-length.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_to-integer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_to-absolute-index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_shared-key.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_shared.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_uid.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_enum-bug-keys.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\core-js\object\freeze.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\fn\object\freeze.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\es6.object.freeze.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_meta.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-sap.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\helpers\classCallCheck.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\helpers\createClass.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\core-js\object\define-property.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\fn\object\define-property.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\es6.object.define-property.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\trimResultTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\trimResultTransformer\trimResultTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\stripIndentTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\stripIndentTransformer\stripIndentTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\helpers\toConsumableArray.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\core-js\array\from.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\fn\array\from.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\es6.string.iterator.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_string-at.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_iter-define.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_library.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_redefine.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_iterators.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_iter-create.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-create.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_set-to-string-tag.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_wks.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_object-gpo.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_to-object.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\es6.array.from.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_iter-call.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_is-array-iter.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_create-property.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\core.get-iterator-method.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_classof.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\_iter-detect.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\replaceResultTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\replaceResultTransformer\replaceResultTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\replaceSubstitutionTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\replaceSubstitutionTransformer\replaceSubstitutionTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\inlineArrayTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\inlineArrayTransformer\inlineArrayTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\splitStringTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\splitStringTransformer\splitStringTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\removeNonPrintingValuesTransformer\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\removeNonPrintingValuesTransformer\removeNonPrintingValuesTransformer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\babel-runtime\core-js\number\is-nan.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\fn\number\is-nan.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\core-js\library\modules\es6.number.is-nan.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\commaLists\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\commaLists\commaLists.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\commaListsAnd\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\commaListsAnd\commaListsAnd.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\commaListsOr\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\commaListsOr\commaListsOr.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\html\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\html\html.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\codeBlock\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\source\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\safeHtml\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\safeHtml\safeHtml.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLine\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLine\oneLine.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineTrim\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineTrim\oneLineTrim.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineCommaLists\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineCommaLists\oneLineCommaLists.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineCommaListsOr\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineCommaListsOr\oneLineCommaListsOr.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineCommaListsAnd\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineCommaListsAnd\oneLineCommaListsAnd.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\inlineLists\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\inlineLists\inlineLists.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineInlineLists\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\oneLineInlineLists\oneLineInlineLists.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\stripIndent\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\stripIndent\stripIndent.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\stripIndents\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\common-tags\lib\stripIndents\stripIndents.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\group.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\message.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\errors\friendly.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\errors\command-format.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\base.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\dispatcher.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\escape-string-regexp\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\providers\helper.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\util.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\package.json
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\providers\base.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\extensions\guild.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\crashreporter\lib\crashreporter.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\mkdirp\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageCreate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\Action.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageDelete.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageDeleteBulk.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageReactionAdd.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageReactionRemove.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageReactionRemoveEmoji.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\MessageReactionRemoveAll.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\ChannelCreate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\ChannelDelete.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\ChannelUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildDelete.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildMemberGet.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildMemberRemove.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildBanRemove.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildRoleCreate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildRoleDelete.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildRoleUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\InviteCreate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\InviteDelete.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\UserGet.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\UserUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\UserNoteUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildSync.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildEmojiCreate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildEmojiDelete.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildEmojiUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildEmojisUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildRolesPositionUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js\src\client\actions\GuildChannelsPositionUpdate.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\string.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\integer.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\float.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\boolean.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\user.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\member.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\role.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\channel.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\types\message.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\util\help.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\util\prefix.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\util\ping.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\util\eval.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\commands\groups.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\commands\enable.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\commands\disable.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\commands\reload.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\commands\load.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\discord.js-commando\src\commands\commands\unload.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\require-all\index.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\guild.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\hello.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\info.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\invite.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\listservers.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\roll.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\general\say.js
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\listen\leave.js
+-----------------------
+active handle:
+[
+  WriteStream {
+    connecting: false,
+    _hadError: false,
+    _parent: null,
+    _host: null,
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: null,
+      pipesCount: 0,
+      flowing: null,
+      ended: false,
+      endEmitted: false,
+      reading: false,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      emitClose: false,
+      autoDestroy: false,
+      destroyed: false,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: false,
+      decoder: null,
+      encoding: null,
+      [Symbol(kPaused)]: null
+    },
+    readable: false,
+    _events: [Object: null prototype] { end: [Function: onReadableStreamEnd] },
+    _eventsCount: 1,
+    _maxListeners: undefined,
+    _writableState: WritableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      finalCalled: false,
+      needDrain: false,
+      ending: false,
+      ended: false,
+      finished: false,
+      destroyed: false,
+      decodeStrings: false,
+      defaultEncoding: 'utf8',
+      length: 0,
+      writing: false,
+      corked: 0,
+      sync: false,
+      bufferProcessing: false,
+      onwrite: [Function: bound onwrite],
+      writecb: null,
+      writelen: 0,
+      afterWriteTickInfo: [Object],
+      bufferedRequest: null,
+      lastBufferedRequest: null,
+      pendingcb: 3,
+      prefinished: false,
+      errorEmitted: false,
+      emitClose: false,
+      autoDestroy: false,
+      bufferedRequestCount: 0,
+      corkedRequestsFree: [Object]
+    },
+    writable: true,
+    allowHalfOpen: false,
+    _sockname: null,
+    _pendingData: null,
+    _pendingEncoding: '',
+    server: null,
+    _server: null,
+    columns: 203,
+    rows: 12,
+    _type: 'tty',
+    fd: 1,
+    _isStdio: true,
+    destroySoon: [Function: destroy],
+    _destroy: [Function: dummyDestroy],
+    [Symbol(asyncId)]: 2,
+    [Symbol(kHandle)]: TTY { [Symbol(owner)]: [Circular] },
+    [Symbol(kSetNoDelay)]: false,
+    [Symbol(lastWriteQueueSize)]: 0,
+    [Symbol(timeout)]: null,
+    [Symbol(kBuffer)]: null,
+    [Symbol(kBufferCb)]: null,
+    [Symbol(kBufferGen)]: null,
+    [Symbol(kCapture)]: false,
+    [Symbol(kBytesRead)]: 0,
+    [Symbol(kBytesWritten)]: 0
+  }
+]
+-----------------------
+active request:
+[]
+-----------------------
+D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\commands\listen\rec.js:79
+                        });
+                         ^
+
+SyntaxError: Unexpected token ')'
+    at wrapSafe (internal/modules/cjs/loader.js:1054:16)
+    at Module._compile (internal/modules/cjs/loader.js:1102:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\require-all\index.js:52:46
+    at Array.forEach (<anonymous>)
+    at requireAll (D:\CodeProjects\VisualStudio repos\Ursula\discordListener2\node_modules\require-all\index.js:34:9)

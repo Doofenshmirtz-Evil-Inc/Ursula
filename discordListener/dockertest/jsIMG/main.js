@@ -1,11 +1,23 @@
 console.log("Hello World from JS");
 
 const express = require("express");
-const app = express();
-const port = 8080
+var api = express();
+const port = '8080'
 
-app.get("/", function (req, res) {
+api.use(express.static(__dirname+'/'));
+
+api.get("/", (req, res) => {
+    console.log('deeeeeeeeeeeeeeeeeeeeeeeeee')
     res.send("Hello World");
-})
+});
 
-app.listen(port, () => console.log("we up, port: "+port));
+api.post('/add', (req, res) => {
+    // console.log(req);
+    res.json({'f': 'ffffffffffffffffffffff'})
+    console.log('Post request recieved')
+});
+
+// THIS BELONGS AT THE BOTTOM FOREVER
+api.listen(port, () => {
+    console.log("API is up, port:"+port);
+});

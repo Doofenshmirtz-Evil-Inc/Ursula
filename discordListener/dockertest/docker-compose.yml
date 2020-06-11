@@ -8,11 +8,11 @@ services:
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/default.conf
         networks:
-            - container-network
+            container-network:
+                aliases:
+                    - js-test
         ports:
             - 8080:8080
-        depends_on: 
-            - py-test
         restart: always
         command: /bin/sh -c "node main.js"
     py-test:
@@ -27,12 +27,13 @@ services:
             - LC_ALL=C.UTF-8
             - LANG=C.UTF-8
         command: bash -c "python main.py"
-        restart: always
+        depends_on: 
+            - js-test
         networks:
             container-network:
                 aliases:
-                    - flask-app
+                    - py-test
         ports:
-            - 8080:5000
+            - 5000:5000
 networks:
     container-network:
