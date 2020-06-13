@@ -65,3 +65,4 @@ src/
 node_modules
 ffmpeg.exe
 *.wav
+*.json

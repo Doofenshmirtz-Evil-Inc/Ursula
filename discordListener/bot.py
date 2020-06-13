@@ -15,15 +15,13 @@ from dotenv import load_dotenv
 if os.getenv('BOTKEY') is None:
     load_dotenv(str(Path(__file__).resolve().parents[0]) + '/keys.env')
 
-# Below cogs represents our folder our cogs are in. Following is the file name. So 'meme.py' in cogs, would be cogs.meme
-# Think of it like a dot path import
-initial_extensions = ['cogs.member', 'cogs.simple', 'cogs.call']
+initial_extensions = []
 
 logging.basicConfig(level=logging.INFO, format=('%(asctime)s %(levelname)s %(name)s | %(message)s'))
 logger = logging.getLogger('bot')
 logger.setLevel('DEBUG')
 
-description = '''ursla listens, ursla knows all'''
+description = '''ursula listens, ursula knows all'''
 bot = commands.Bot(command_prefix='$', description=description)
 
 # Here we load our extensions(cogs) listed above in [initial_extensions].

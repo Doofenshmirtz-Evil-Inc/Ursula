@@ -2,3 +2,4 @@ discord
 python-dotenv
 PyNaCl
 pydub
+google-cloud-storage
