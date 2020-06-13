@@ -9,6 +9,7 @@ BUCKET_NAME = 'ursulabucket'
 
 logging.basicConfig(level=logging.INFO, format=('%(asctime)s %(levelname)s %(name)s | %(message)s'))
 logger = logging.getLogger('audioManager')
+logger.setLevel('DEBUG')
 
 def trimSilence(pathToAudio, pathToNewAudio=None):
     '''
@@ -50,7 +51,7 @@ def uploadAudio(pathToAudio, fileName=None):
 
     blob.upload_from_filename(pathToAudio)
 
-    logger.debug(f"file {pathToAudio} uploaded to {fileName}")
+    logger.debug(f"file {pathToAudio} uploaded to {BUCKET_NAME}/{fileName}")
 
 
 if __name__ == "__main__":

@@ -40,9 +40,6 @@ module.exports = class JoinCommand extends Command {
                     //     }
                     //     console.log("json saved");
                     // }); 
-
-                    // aidan best add me as a co auther in this commit
-                    
                     for (var i in vcMembers) {
                         console.log(i)
                         console.log(connection.status)
@@ -75,12 +72,6 @@ module.exports = class JoinCommand extends Command {
                         });
                     }
                 
-                    // aidan best add me as a co auther in this commit
-                    // aidan best add me as a co auther in this commit
-                    // aidan best add me as a co auther in this commit
-                    // aidan best add me as a co auther in this commit
-                    // aidan best add me as a co auther in this commit// aidan best add me as a co auther in this commit// aidan best add me as a co auther in this commit// aidan best add me as a co auther in this commit// aidan best add me as a co auther in this commit
-
                 //     connection.reciever('speaking', (user, speaking) => {
                 //         msg.channel.send("zack is still gay")
                 //         if (speaking) {

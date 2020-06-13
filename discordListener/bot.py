@@ -4,36 +4,35 @@
 
 import logging
 import os
-import traceback
+import threading
 from pathlib import Path
 
 import discord
+import requests
 from discord.ext import commands
 from dotenv import load_dotenv
+from flask import Flask, jsonify
+from flask_restful import Api, Resource, reqparse
 
 # setup
 if os.getenv('BOTKEY') is None:
     load_dotenv(str(Path(__file__).resolve().parents[0]) + '/keys.env')
 
-initial_extensions = []
+app = Flask(__name__)
+api = Api(app, prefix="/api/v1")
+parser = reqparse.RequestParser()
+parser.add_argument('sourceName')
+parser.add_argument('displayID')
 
 logging.basicConfig(level=logging.INFO, format=('%(asctime)s %(levelname)s %(name)s | %(message)s'))
 logger = logging.getLogger('bot')
 logger.setLevel('DEBUG')
 
-description = '''ursula listens, ursula knows all'''
-bot = commands.Bot(command_prefix='$', description=description)
+NOT_OKAY_MSG = 'NOT OKAY :('
+DESCRIPTION = '''ursula listens, ursula knows all'''
+bot = commands.Bot(command_prefix='$', description=DESCRIPTION)
 
-# Here we load our extensions(cogs) listed above in [initial_extensions].
-if __name__ == '__main__':
-    for extension in initial_extensions:
-        try:
-            bot.load_extension(extension)
-        except Exception as e:
-            logger.exception(f'Failed to load {extension}.')
-            traceback.print_exc()
-
-async def activeVoiceChannels(bot=bot):
+def activeVoiceChannels(bot=bot):
     activeVCS = []
     for guild in bot.guilds:
         for vc in guild.voice_channels:
@@ -56,6 +55,63 @@ async def disconnectAll():
     for vc in vcs:
         await vc.disconnect()
 
+# api
+
+class index(Resource):
+    """ oh, what fun an index is """
+
+    def get(self):
+        return 'Hello there. Ya shouldn\'t be here'
+
+class vcs(Resource):
+    """ return a list of active voice channel id's to the listener """
+
+    def get(self):
+        """ return a list of active voice channel id's to the listener """
+
+        try:
+            activeVcs = activeVoiceChannels()
+        except:
+            return NOT_OKAY_MSG
+
+        logger.debug(activeVcs)
+        
+        activeVcsId = []
+        for vc in activeVcs:
+            activeVcsId.append(vc.id)
+            logger.debug(vc.id)
+
+        return jsonify(activeVcsId)
+
+    def post(self):
+        """ this is stuff i grabbed from my alexascreencontrol repo, ill change it later """
+
+        args = parser.parse_args()
+        logger.debug(args)
+
+        try:
+            if args['displayID'] == '1':
+                url = 'f'
+                data = {'destinationSourceName': args['sourceName']}
+                r = requests.put(url, json=data, params=data)
+            else:
+              # http://dev.userful.com/rest/#displays__displayid__switch_put
+                url = 'f'
+                data = {'sourceName': args['sourceName']}
+                r = requests.put(url, json=data)
+
+        except requests.exceptions.RequestException as e:
+            logger.error(e)
+            return NOT_OKAY_MSG
+
+        return 'OKAY'
+
+api.add_resource(index, '/')
+api.add_resource(vcs, '/vcs')
+
+def runApp():
+    app.run(host='0.0.0.0', port=5000, threaded=True)
+
 # on start
 @bot.event
 async def on_ready():
@@ -65,7 +121,13 @@ async def on_ready():
 
     # cleanup if it crashed or something earlier
     await disconnectAll()
-    vcs = await activeVoiceChannels()
+    vcs = activeVoiceChannels()
+    appThread = threading.Thread(target=runApp)
+    appThread.start()
 
 # login
-bot.run(os.getenv('BOTKEY'), bot=True)
+def runBot():
+    bot.run(os.getenv('BOTKEY'), bot=True)
+
+if __name__ == "__main__":
+    runBot()
