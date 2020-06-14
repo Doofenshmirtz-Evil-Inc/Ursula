@@ -55,6 +55,37 @@ client.on('message', message => { //check for message
 				case "help":
 					message.channel.send('hello my name is dnak bot, i am a dnak discrod bot made by djmango. features include youtube music, youtube playlists and custom definitions. type ./commands for commands')
 					break;
+				case "rec":
+					var voiceChannel = message.member.voice.channel;
+					if (voiceChannel) {
+						voiceChannel.join()
+							.then(conn => {
+								message.reply("in call, pog");
+								const receiver = conn.receiver;
+
+								conn.play('jingle.mp3');
+
+								conn.on('speaking', (user, speaking) => {
+									if (speaking) {
+										message.channel.send(`I'm listening to ${user}`);
+										// this creates a 16-bit signed PCM, stereo 48KHz PCM stream.
+										const audioStream = receiver.createStream(user);
+										// create an output stream so we can dump our data in a file
+										const outputStream = generateOutputFile(voiceChannel, user);
+										// pipe our audio data into the file stream
+										audioStream.pipe(outputStream);
+										outputStream.on("data", console.log);
+										// when the stream ends (the user stopped talking) tell the user
+										audioStream.on('end', () => {
+											message.channel.send(`I'm no longer listening to ${user}`);
+										});
+									}
+								})
+							})
+					} else {
+						message.reply('get in call retard');
+					}
+					break;
 			}
 });
 
