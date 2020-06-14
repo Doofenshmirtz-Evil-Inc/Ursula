@@ -4,7 +4,6 @@ console.log("getting apis...");
 global.path = require('path');
 global.fs = require('fs');
 global.os = require('os');
-global.Commando = require('discord.js-commando');
 global.Discord = require('discord.js');
 
 //pull keys file
@@ -17,16 +16,13 @@ global.botSudoId = keys.botsudo; //bot sudo id
 //debug setup
 global.prefix = "s!"
 
-//bot settings
-console.log("configuring commando...");
 //make client global
-global.client = new Commando.Client({
+global.client = new Discord.Client({
 	owner: botSudoId,
 	commandPrefix: prefix,
 	disableEveryone: true,
 	unknownCommandResponse: false
 });
-global.discordClient = new Discord.Client();
 
 //audio file saving func
 function generateOutputFile(channel, member) {
@@ -35,21 +31,9 @@ function generateOutputFile(channel, member) {
 	return fs.createWriteStream(fileName);
   }
 
-//command groups
-client.registry
-	.registerDefaultTypes()
-	.registerGroups([
-		['listen', 'listening ability']
-	])
-	.registerDefaultGroups()
-	.registerDefaultCommands()
-	.registerCommandsIn(path.join(__dirname, 'commands'));
 //ready?
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
-	global.servers = (`Servers:\n${client.guilds.map(g => g.name).join("\n")}`);
-	console.log(`Servers:\n${client.guilds.map(g => g.name).join("\n")}`);
-	let localUsers = client.users.array().length;
 	let updatePres = setInterval(function () {
 		let localUsers = client.users.array().length;
 		client.user.setPresence({
@@ -60,6 +44,18 @@ client.on('ready', () => {
 		});
 	}, 60000);
 	updatePres;
+});
+
+client.on('message', message => { //check for message
+			if (message.author.equals(client.user)) return; //check if the client sent the message, if so ignore
+			if (!message.content.startsWith(prefix)) return; //check for prefix
+			var args = message.content.substring(prefix.length).split(" "); //take each argument
+			switch (args[0].toLowerCase()) {
+				//reply statements
+				case "help":
+					message.channel.send('hello my name is dnak bot, i am a dnak discrod bot made by djmango. features include youtube music, youtube playlists and custom definitions. type ./commands for commands')
+					break;
+			}
 });
 
 //handlers for errors and disconnects

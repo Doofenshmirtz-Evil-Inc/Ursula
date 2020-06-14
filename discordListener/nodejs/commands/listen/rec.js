@@ -24,74 +24,28 @@ module.exports = class JoinCommand extends Command {
 	async run(msg) {
         var voiceChannel = msg.member.voiceChannel;
         if (voiceChannel) {
-            await voiceChannel.join()
-                .then(connection => {
-                    msg.reply("in call, pog");
-                    msg.channel.send("zack is gay")
+            const conn = await msg.member.voiceChannel.join();
+            msg.reply("in call, pog");
+            const receiver = conn.receiver;
 
-                    var vcMembers = voiceChannel.members.array()
+            conn.play('jingle.mp3');
 
-                    // console.log(voiceChannel.members.array())
-                    // var vcArray = String(voiceChannel.members.array())
-                    // // var vcJson = JSON.stringify(vcArray);
-                    // fs.writeFile("./vcArray", vcArray, function(err) {
-                    //     if(err) {
-                    //         return console.log(err);
-                    //     }
-                    //     console.log("json saved");
-                    // }); 
-                    for (var i in vcMembers) {
-                        console.log(i)
-                        console.log(connection.status)
-                        var guildMember = vcMembers[i]
-                        console.log(guildMember.user.username)
-                        // console.log(connection)
-                        // var stream = connection.receiver.createStream(guildMember.user, {'mode': 'opus', 'end': 'silence'})
-                        // const outputStream = generateOutputFile(voiceChannel, guildMember.user);
-                        // stream.pipe(outputStream);
-
-                        // console.log(stream)
-                        
-                    }
-                    
-                    var loop = true
-                    while (true) {
-                        while  (loop) {
-                        console.log("in while loop")
-                        var loop = false
-                        }
-                        connection.on('speaking', (member, speaking) => {
-                            console.log(speaking)
-                            // if (speaking) {
-                            //     console.log('sup dog');
-                            // }
-                            // else {
-                            //     console.log(`a guild member starts/stops speaking: ${member.tag}`);
-                            // }
-                            
-                        });
-                    }
-                
-                //     connection.reciever('speaking', (user, speaking) => {
-                //         msg.channel.send("zack is still gay")
-                //         if (speaking) {
-                //             //oop
-                //             msg.channel.send(`I'm listening to ${user}`);
-                //             // this creates a 16-bit signed PCM, stereo 48KHz PCM stream.
-                //             const audioStream = receiver.createStream(user);
-                //             // create an output stream so we can dump our data in a file
-                //             const outputStream = generateOutputFile(voiceChannel, user);
-                //             // pipe our audio data into the file stream
-                //             audioStream.pipe(outputStream);
-                //             outputStream.on("data", console.log);
-                //             // when the stream ends (the user stopped talking) tell the user
-                //             audioStream.on('end', () => {
-                //                 msg.channel.send(`I'm no longer listening to ${user}`);
-                //             });
-                //         }
-
-                // });
-            });
+            conn.on('speaking', (user, speaking) => {
+            if (speaking) {
+                msg.channel.sendMessage(`I'm listening to ${user}`);
+                // this creates a 16-bit signed PCM, stereo 48KHz PCM stream.
+                const audioStream = receiver.createPCMStream(user);
+                // create an output stream so we can dump our data in a file
+                const outputStream = generateOutputFile(voiceChannel, user);
+                // pipe our audio data into the file stream
+                audioStream.pipe(outputStream);
+                outputStream.on("data", console.log);
+                // when the stream ends (the user stopped talking) tell the user
+                audioStream.on('end', () => {
+                    msg.channel.sendMessage(`I'm no longer listening to ${user}`);
+                });
+                }
+            })
         }
         else {
             msg.reply('get in call retard');
