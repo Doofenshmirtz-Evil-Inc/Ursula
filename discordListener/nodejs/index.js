@@ -27,8 +27,9 @@ global.client = new Discord.Client({
 //audio file saving func
 function generateOutputFile(channel, member) {
 	// use IDs instead of username cause some people have stupid emojis in their name
-	const fileName = `./recordings/${channel.id}-${member.id}-${Date.now()}.pcm`;
-	return fs.createWriteStream(fileName);
+	const fileName = `audio/${channel.id}-${member.id}-${Date.now()}.pcm`;
+	console.log('creating file')
+	return fs.createWriteStream(fileName)
   }
 
 //ready?
@@ -53,7 +54,7 @@ client.on('message', message => { //check for message
 			switch (args[0].toLowerCase()) {
 				//reply statements
 				case "help":
-					message.channel.send('hello my name is dnak bot, i am a dnak discrod bot made by djmango. features include youtube music, youtube playlists and custom definitions. type ./commands for commands')
+					message.channel.send('i am fongus. red.')
 					break;
 				case "rec":
 					var voiceChannel = message.member.voice.channel;
@@ -65,22 +66,16 @@ client.on('message', message => { //check for message
 
 								conn.play('jingle.mp3');
 
-								conn.on('speaking', (user, speaking) => {
-									if (speaking) {
-										message.channel.send(`I'm listening to ${user}`);
-										// this creates a 16-bit signed PCM, stereo 48KHz PCM stream.
-										const audioStream = receiver.createStream(user);
-										// create an output stream so we can dump our data in a file
-										const outputStream = generateOutputFile(voiceChannel, user);
-										// pipe our audio data into the file stream
-										audioStream.pipe(outputStream);
-										outputStream.on("data", console.log);
-										// when the stream ends (the user stopped talking) tell the user
-										audioStream.on('end', () => {
-											message.channel.send(`I'm no longer listening to ${user}`);
-										});
-									}
-								})
+								var vcMembers = voiceChannel.members.array()
+
+								for (var i in vcMembers) {
+									var guildMember = vcMembers[i]
+									console.log(guildMember.user.username)
+									// console.log(connection)
+									var stream = receiver.createStream(guildMember.user, {'mode': 'pcm', 'end': 'manual'})
+									const outputStream = generateOutputFile(voiceChannel, guildMember)
+									stream.pipe(outputStream);
+								}
 							})
 					} else {
 						message.reply('get in call retard');

@@ -67,3 +67,4 @@ ffmpeg.exe
 *.wav
 keys.json
 creds.json
+audio/
