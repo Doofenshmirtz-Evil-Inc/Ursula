@@ -14,6 +14,8 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 
+import audioManager
+
 # setup
 if os.getenv('BOTKEY') is None:
     load_dotenv(str(Path(__file__).resolve().parents[0]) + '/keys.env')
@@ -79,7 +81,6 @@ class vcs(Resource):
         activeVcsId = []
         for vc in activeVcs:
             activeVcsId.append(vc.id)
-            logger.debug(vc.id)
 
         return jsonify(activeVcsId)
 

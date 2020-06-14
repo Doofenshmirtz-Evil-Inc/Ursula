@@ -1,39 +1,41 @@
 version: '3.3'
 services:
-    js-test:
+    nodejs_listener:
         build:
-              context: jsIMG/
+              context: nodejs/
               dockerfile: Dockerfile
-        container_name: js-test
+        container_name: nodejsListener
         volumes:
-            - ./nginx.conf:/etc/nginx/conf.d/default.conf
+            - audio-volume:/audio
         networks:
             container-network:
                 aliases:
-                    - js-test
+                    - nodejsListener
         ports:
-            - 8080:8080
+            - 5001:5001
         restart: always
-        command: /bin/sh -c "node main.js"
-    py-test:
+    python_manager:
         build:
-            context: pythonIMG/
+            context: python/
             dockerfile: Dockerfile
-        container_name: py-test
+        container_name: pythonManager
         volumes:
-            - ./:/app/
+            - ./python:/python/
+            - audio-volume:/audio
         environment:
-            - FLASK_APP=/app/app.py
             - LC_ALL=C.UTF-8
             - LANG=C.UTF-8
-        command: bash -c "python main.py"
+        restart: always
         depends_on: 
-            - js-test
+            - nodejs_listener
         networks:
             container-network:
                 aliases:
-                    - py-test
+                    - pythonManager
         ports:
             - 5000:5000
 networks:
     container-network:
+
+volumes:
+    audio-volume: 

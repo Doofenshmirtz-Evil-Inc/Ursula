@@ -6,10 +6,9 @@ global.fs = require('fs');
 global.os = require('os');
 global.Commando = require('discord.js-commando');
 global.Discord = require('discord.js');
-global.crashreporter = require('crashreporter');
 
 //pull keys file
-const keys = JSON.parse(fs.readFileSync('./keys/keys.json')); //read all keys
+const keys = JSON.parse(fs.readFileSync('./keys.json')); //read all keys
 //keys
 console.log("pulling keys...");
 global.token = keys.discordtoken; //discord api key
@@ -40,7 +39,6 @@ function generateOutputFile(channel, member) {
 client.registry
 	.registerDefaultTypes()
 	.registerGroups([
-		['general', 'general commands'],
 		['listen', 'listening ability']
 	])
 	.registerDefaultGroups()
@@ -56,7 +54,7 @@ client.on('ready', () => {
 		let localUsers = client.users.array().length;
 		client.user.setPresence({
 			game: {
-				name: `${prefix}help | ${localUsers} users | goo.gl/qoVTdx`,
+				name: `how many funko pops do YOu have? | ${localUsers} users`,
 				type: 0
 			}
 		});
