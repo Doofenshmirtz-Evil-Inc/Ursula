@@ -38,6 +38,19 @@ def trimSilence(pathToAudio, pathToNewAudio=None):
 
     return pathToNewAudio
 
+def rawToWav(pathToAudio, pathToNewAudio=None):
+    '''
+    takes raw pcm audio (assumed to be 16bit 48000hz stereo) and converts to wav
+
+    returns pathToNewAudio
+    '''
+
+    # check if a new path was given, if not, new path is old path
+    if pathToNewAudio is None:
+        pathToNewAudio = pathToAudio.replace(".pcm", ".wav")
+
+    pydub.AudioSegment.from_raw(pathToAudio, sample_width=2, frame_rate=48000, channels=2).export(pathToNewAudio, format='wav')
+
 def uploadAudio(pathToAudio, fileName=None):
     ''' uploads given audio file to ursula google cloud bucket '''
 
@@ -57,4 +70,5 @@ def uploadAudio(pathToAudio, fileName=None):
 if __name__ == "__main__":
     logger.setLevel('DEBUG')
     logger.debug('hey there cowboy')
-    uploadAudio(trimSilence('test.wav', 'testnew.wav'))
+    trimSilence('a.wav')
+    # uploadAudio(trimSilence('test.wav', 'testnew.wav'))

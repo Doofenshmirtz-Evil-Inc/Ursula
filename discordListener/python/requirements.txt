@@ -3,5 +3,7 @@ python-dotenv
 PyNaCl
 pydub
 google-cloud-storage
+gspread
+oauth2client
 flask
 flask_restful
