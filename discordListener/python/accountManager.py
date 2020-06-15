@@ -30,7 +30,10 @@ def getAccount():
     accountsAvailable = []
 
     for account in accounts:
-        accountLastLoggedTime = datetime.strptime(account[2], "%m-%d-%Y %H:%M:%S").timestamp()
+        if account[1] == '':
+            account[1] = str(datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
+        
+        accountLastLoggedTime = datetime.strptime(account[1], "%m-%d-%Y %H:%M:%S").timestamp()
         distance = datetime.now().timestamp() - accountLastLoggedTime # the amount of time in seconds since the last time this account was logged in
         if account[1].lower() == 'false' or distance > 1800: # if this account hasnt been used in 30 mins
             accountsAvailable.append(account)
@@ -42,16 +45,14 @@ def getAccount():
     token = accountChosen[0]
 
     # check if account is bot
-    if accountChosen[3].lower() == 'false':
+    if accountChosen[2].lower() == 'false':
         isBot = False
     else:
         isBot = True
     
     # upload updated info to sheet
-    accountChosenSheet = sheet.find(token)
-    accountRange = f'A{str(accountChosenSheet.row)}:D{str(accountChosenSheet.row)}'
-    accountUpload = {'range': accountRange, 'values': [token, 'TRUE', str(datetime.now().strftime("%m-%d-%Y %H:%M:%S")), accountChosen[3]]}
-    sheet.update(accountRange, [[token, 'TRUE', str(datetime.now().strftime("%m-%d-%Y %H:%M:%S")), accountChosen[3]]])
+    accountChosenCell = sheet.find(token)
+    sheet.update_cell(accountChosenCell.row, accountChosenCell.col, str(datetime.now().strftime("%m-%d-%Y %H:%M:%S")))
 
     return [token, isBot]
 

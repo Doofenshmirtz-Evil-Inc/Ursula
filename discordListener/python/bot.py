@@ -53,8 +53,7 @@ def activeVoiceChannels(bot=bot):
     return activeVCS
 
 async def disconnectAll():
-    vcs = bot.voice_clients
-    for vc in vcs:
+    for vc in bot.voice_clients:
         await vc.disconnect()
 
 # api
@@ -122,13 +121,12 @@ async def on_ready():
 
     # cleanup if it crashed or something earlier
     await disconnectAll()
-    vcs = activeVoiceChannels()
     appThread = threading.Thread(target=runApp)
     appThread.start()
 
 # login
-def runBot():
-    bot.run(os.getenv('BOTKEY'), bot=True)
+def runBot(key=os.getenv('BOTKEY'), isBot=True):
+    bot.run(key, bot=isBot)
 
 if __name__ == "__main__":
     runBot()
