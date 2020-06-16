@@ -27,23 +27,20 @@ def getAccount():
     sheet = gc.open_by_key('1sW1EWWTYz-vQKuJQ6thJ8Fstm4IdtwpntauruiH3uU0').sheet1
     accounts = sheet.get_all_values()[1:]
 
-    accountsAvailable = []
+    lastDistance = 0
 
     for account in accounts:
-        if account[1] == '':
-            account[1] = str(datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
-            accountsAvailable.append(account)
-        
-        accountLastLoggedTime = datetime.strptime(account[1], "%m-%d-%Y %H:%M:%S").timestamp()
-        distance = datetime.now().timestamp() - accountLastLoggedTime # the amount of time in seconds since the last time this account was logged in
-        if account[1].lower() == 'false' or distance > 1800: # if this account hasnt been used in 30 mins
-            accountsAvailable.append(account)
-
-        # TODO: instead of choosing one under half an hour, sort the accounts based on most time since last uesd and go thru that
+        if account[1] == '': # if we have a new account just choose that
+            accountChosen = account
+            break
+        else:
+            accountLastLoggedTime = datetime.strptime(account[1], "%m-%d-%Y %H:%M:%S").timestamp()
+            distance = datetime.now().timestamp() - accountLastLoggedTime # the amount of time in seconds since the last time this account was logged in
+            if distance > lastDistance: # if this account is older than our currently selected accounts
+                accountChosen = account
+                lastDistance = distance
 
     # grab the account and token
-    logger.debug(f'found {len(accountsAvailable)} available accounts, choosing randomly')
-    accountChosen = choice(accountsAvailable)
     logger.debug(accountChosen)
     token = accountChosen[0]
 

@@ -115,12 +115,9 @@ class account(Resource):
 
 
 class alive(Resource):
-    ''' returns okay if alive '''
+    ''' returns okay '''
 
     def get(self):
-        # logger.debug('eerwerwe ')
-        # r = requests.get('http://python-manager:5000/')
-        # return r.text
         return 'OKAY'
 
 api.add_resource(index, '/')
@@ -140,8 +137,10 @@ async def on_ready():
 
     # cleanup if it crashed or something earlier
     await disconnectAll()
-    appThread = threading.Thread(target=runApp)
-    appThread.start()
+    # appThread = threading.Thread(target=runApp)
+    # appThread.start()
+    runApp()
+    logger.debug('wewefwerer')
     
 
 # login

@@ -6,6 +6,8 @@ const fs = require('fs');
 const os = require('os');
 const Discord = require('discord.js');
 const superagent = require('superagent');
+const express = require("express");
+
 
 //pull keys file
 const keys = JSON.parse(fs.readFileSync('./keys.json')); //read all keys
@@ -14,8 +16,11 @@ console.log("pulling keys...");
 var token = keys.discordtoken; //discord api key
 var botSudoId = keys.botsudo; //bot sudo id
 
-//debug setup
+const port = '5001'
 var prefix = "s!"
+
+var api = express();
+api.use(express.static(__dirname + '/'));
 
 //make client global
 var client = new Discord.Client({
@@ -33,10 +38,41 @@ function generateOutputFile(channel, member) {
 	return fs.createWriteStream(fileName)
   }
 
+const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
+
+function checkApi(callback) { // this is god awful and i hate javascript for this reason
+	console.log('checking api')
+	superagent.get('http://python-manager:5000/alive')
+		.end((err, res) => {
+			if (err) {
+				console.log(err);
+				sleep(5000).then(() => {
+					// This will execute 10 seconds from now
+					checkApi()
+				});
+			}
+			else {
+				console.log(res.body);
+				if (res.body == 'OKAY') {
+					apiUp = true;
+					callback();
+				}
+				else checkApi()
+			}
+		});
+}
+
+function useless() {
+	var usels = 'wow this is a useless function'
+}
+
 //ready?
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	console.log('waiting for python manager..')
+	checkApi(function() {
+		console.log('yay it found it')
+	})
 
 	let updatePres = setInterval(function () {
 		client.user.setPresence({
@@ -125,6 +161,35 @@ process.on('rejectionHandled', (err) => {
 
 process.on('exit', function () {
 	client.destroy();
+});
+
+api.get("/", (req, res) => {
+	console.log('deeeeeeeeeeeeeeeeeeeeeeeeee')
+	res.send("Hello World");
+});
+
+api.get("/alive", (req, res) => {
+	superagent.get('http://python-manager:5000/')
+		.end((err, res) => {
+			if (err) {
+				return console.log(err);
+			}
+			console.log(res.body);
+			if (res.body == 'OKAY') apiUp = true;
+		});
+	res.send("OKAY");
+});
+
+api.post('/add', (req, res) => {
+	// console.log(req);
+	res.json({
+		'f': 'ffffffffffffffffffffff'
+	})
+	console.log('Post request recieved')
+});
+
+api.listen(port, () => {
+	console.log("API is up, port:" + port);
 });
 
 client.login(token);
