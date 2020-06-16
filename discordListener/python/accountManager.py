@@ -32,11 +32,14 @@ def getAccount():
     for account in accounts:
         if account[1] == '':
             account[1] = str(datetime.now().strftime("%m-%d-%Y %H:%M:%S"))
+            accountsAvailable.append(account)
         
         accountLastLoggedTime = datetime.strptime(account[1], "%m-%d-%Y %H:%M:%S").timestamp()
         distance = datetime.now().timestamp() - accountLastLoggedTime # the amount of time in seconds since the last time this account was logged in
         if account[1].lower() == 'false' or distance > 1800: # if this account hasnt been used in 30 mins
             accountsAvailable.append(account)
+
+        # TODO: instead of choosing one under half an hour, sort the accounts based on most time since last uesd and go thru that
 
     # grab the account and token
     logger.debug(f'found {len(accountsAvailable)} available accounts, choosing randomly')
@@ -52,7 +55,7 @@ def getAccount():
     
     # upload updated info to sheet
     accountChosenCell = sheet.find(token)
-    sheet.update_cell(accountChosenCell.row, accountChosenCell.col, str(datetime.now().strftime("%m-%d-%Y %H:%M:%S")))
+    sheet.update_cell(accountChosenCell.row, (accountChosenCell.col + 1), str(datetime.now().strftime("%m-%d-%Y %H:%M:%S")))
 
     return [token, isBot]
 

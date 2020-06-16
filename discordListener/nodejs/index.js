@@ -1,23 +1,24 @@
-global.startTime = process.hrtime();
+var startTime = process.hrtime();
 //apis
 console.log("getting apis...");
-global.path = require('path');
-global.fs = require('fs');
-global.os = require('os');
-global.Discord = require('discord.js');
+const path = require('path');
+const fs = require('fs');
+const os = require('os');
+const Discord = require('discord.js');
+const superagent = require('superagent');
 
 //pull keys file
 const keys = JSON.parse(fs.readFileSync('./keys.json')); //read all keys
 //keys
 console.log("pulling keys...");
-global.token = keys.discordtoken; //discord api key
-global.botSudoId = keys.botsudo; //bot sudo id
+var token = keys.discordtoken; //discord api key
+var botSudoId = keys.botsudo; //bot sudo id
 
 //debug setup
-global.prefix = "s!"
+var prefix = "s!"
 
 //make client global
-global.client = new Discord.Client({
+var client = new Discord.Client({
 	owner: botSudoId,
 	commandPrefix: prefix,
 	disableEveryone: true,
@@ -35,11 +36,12 @@ function generateOutputFile(channel, member) {
 //ready?
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
+	console.log('waiting for python manager..')
+
 	let updatePres = setInterval(function () {
-		let localUsers = client.users.array().length;
 		client.user.setPresence({
 			game: {
-				name: `how many funko pops do YOu have? | ${localUsers} users`,
+				name: `how many funko pops do YOu have?`,
 				type: 0
 			}
 		});
@@ -55,6 +57,16 @@ client.on('message', message => { //check for message
 				//reply statements
 				case "help":
 					message.channel.send('i am fongus. red.')
+					break;
+				case "te":
+					console.log('teetetete')
+					superagent.get('http://python-manager:5000/')
+						.end((err, res) => {
+							if (err) {
+								return console.log(err);
+							}
+							console.log(res.body);
+						});
 					break;
 				case "rec":
 					var voiceChannel = message.member.voice.channel;

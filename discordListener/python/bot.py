@@ -14,6 +14,7 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 
+import accountManager
 import audioManager
 
 # setup
@@ -21,7 +22,7 @@ if os.getenv('BOTKEY') is None:
     load_dotenv(str(Path(__file__).resolve().parents[0]) + '/keys.env')
 
 app = Flask(__name__)
-api = Api(app, prefix="/api/v1")
+api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('sourceName')
 parser.add_argument('displayID')
@@ -106,8 +107,26 @@ class vcs(Resource):
 
         return 'OKAY'
 
+class account(Resource):
+    ''' returns a free account token and bot status '''
+
+    def get(self):
+        return accountManager.getAccount()
+
+
+class alive(Resource):
+    ''' returns okay if alive '''
+
+    def get(self):
+        # logger.debug('eerwerwe ')
+        # r = requests.get('http://python-manager:5000/')
+        # return r.text
+        return 'OKAY'
+
 api.add_resource(index, '/')
 api.add_resource(vcs, '/vcs')
+api.add_resource(alive, '/alive')
+api.add_resource(account, '/account')
 
 def runApp():
     app.run(host='0.0.0.0', port=5000, threaded=True)
@@ -123,6 +142,7 @@ async def on_ready():
     await disconnectAll()
     appThread = threading.Thread(target=runApp)
     appThread.start()
+    
 
 # login
 def runBot(key=os.getenv('BOTKEY'), isBot=True):

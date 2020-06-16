@@ -1,24 +1,29 @@
 version: '3.3'
+
+networks:
+    container-network:
+
+volumes:
+    audio-volume: 
+
 services:
-    nodejs_listener:
+    nodejs-listener:
         build:
               context: nodejs/
               dockerfile: Dockerfile
-        container_name: nodejsListener
+        container_name: nodejs-listener
         volumes:
             - audio-volume:/audio
         networks:
             container-network:
-                aliases:
-                    - nodejsListener
         ports:
             - 5001:5001
         restart: always
-    python_manager:
+    python-manager:
         build:
             context: python/
             dockerfile: Dockerfile
-        container_name: pythonManager
+        container_name: python-manager
         volumes:
             - ./python:/python/
             - audio-volume:/audio
@@ -26,16 +31,9 @@ services:
             - LC_ALL=C.UTF-8
             - LANG=C.UTF-8
         restart: always
-        depends_on: 
-            - nodejs_listener
         networks:
             container-network:
                 aliases:
-                    - pythonManager
+                    - python-manager
         ports:
             - 5000:5000
-networks:
-    container-network:
-
-volumes:
-    audio-volume: 
