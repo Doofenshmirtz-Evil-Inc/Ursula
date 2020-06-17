@@ -45,25 +45,20 @@ function checkApi(callback) { // this is god awful and i hate javascript for thi
 	superagent.get('http://python-manager:5000/alive')
 		.end((err, res) => {
 			if (err) {
-				console.log(err);
+				console.log('api not up, retrying in 5..');
 				sleep(5000).then(() => {
-					// This will execute 10 seconds from now
+					// This will execute  5 seconds from now
 					checkApi()
 				});
 			}
 			else {
 				console.log(res.body);
 				if (res.body == 'OKAY') {
-					apiUp = true;
 					callback();
 				}
 				else checkApi()
 			}
 		});
-}
-
-function useless() {
-	var usels = 'wow this is a useless function'
 }
 
 //ready?
