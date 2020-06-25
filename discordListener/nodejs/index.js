@@ -48,7 +48,7 @@ function checkApi(callback) { // this is god awful and i hate javascript for thi
 				console.log('api not up, retrying in 5..');
 				sleep(5000).then(() => {
 					// This will execute  5 seconds from now
-					checkApi()
+					checkApi();
 				});
 			}
 			else {
@@ -56,9 +56,18 @@ function checkApi(callback) { // this is god awful and i hate javascript for thi
 				if (res.body == 'OKAY') {
 					callback();
 				}
-				else checkApi()
+				else checkApi();
 			}
 		});
+}
+
+function startListening() { // main listening setup
+	// grab active vc ids from py api
+	// create list of active vc objects
+	// randomly choose vc to join
+	// create streams for all users and write to file
+	// some kind of stream handler
+	// tell the python thing that we wrote files
 }
 
 //ready?
@@ -66,7 +75,7 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	console.log('waiting for python manager..')
 	checkApi(function() {
-		console.log('yay it found it')
+		console.log('yay it found it');
 	})
 
 	let updatePres = setInterval(function () {
