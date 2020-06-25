@@ -40,7 +40,7 @@ function generateOutputFile(channel, member) {
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
 
-function checkApi(callback) { // this is god awful and i hate javascript for this reason
+function checkApi() {
 	console.log('checking api')
 	superagent.get('http://python-manager:5000/alive')
 		.end((err, res) => {
@@ -54,7 +54,7 @@ function checkApi(callback) { // this is god awful and i hate javascript for thi
 			else {
 				console.log(res.body);
 				if (res.body == 'OKAY') {
-					callback();
+					startListening();
 				}
 				else checkApi();
 			}
@@ -63,8 +63,32 @@ function checkApi(callback) { // this is god awful and i hate javascript for thi
 
 function startListening() { // main listening setup
 	// grab active vc ids from py api
-	// create list of active vc objects
-	// randomly choose vc to join
+	superagent.get('http://python-manager:5000/vcs')
+		.end((err, res) => {
+			if (err) {
+				console.log(err)
+			} else {
+				// we now have the vcs, parse and choose one at random
+				vcs = JSON.parse(res.body)
+				console.log(vcs);
+
+				if (vcs.length == 0) {
+					console.log('no vcs to join :(')
+					return
+				}
+
+				vc = vcs[Math.floor(Math.random() * vcs.length)]
+				console.log(vc)
+
+				// okay so we have our randomly chosen vc, next step
+
+			}
+		});
+
+	// OUTLINE FOR THINGS TODO:
+
+	// create list of active vc objects DONE
+	// randomly choose vc to join DONE
 	// create streams for all users and write to file
 	// some kind of stream handler
 	// tell the python thing that we wrote files
@@ -74,9 +98,7 @@ function startListening() { // main listening setup
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 	console.log('waiting for python manager..')
-	checkApi(function() {
-		console.log('yay it found it');
-	})
+	checkApi()
 
 	let updatePres = setInterval(function () {
 		client.user.setPresence({

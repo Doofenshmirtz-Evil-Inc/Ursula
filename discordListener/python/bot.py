@@ -82,7 +82,7 @@ class vcs(Resource):
         for vc in activeVcs:
             activeVcsId.append(vc.id)
 
-        return jsonify(activeVcsId)
+        return str(activeVcsId)
 
     def post(self):
         """ this is stuff i grabbed from my alexascreencontrol repo, ill change it later """
