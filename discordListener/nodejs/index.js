@@ -69,7 +69,11 @@ function startListening() { // main listening setup
 				console.log(err)
 			} else {
 				// we now have the vcs, parse and choose one at random
-				vcs = JSON.parse(res.body)
+				var vcs = res.body.split(',')
+				console.log(vcs)
+
+				vcs.pop() // remove empty
+
 				console.log(vcs);
 
 				if (vcs.length == 0) {
@@ -77,10 +81,16 @@ function startListening() { // main listening setup
 					return
 				}
 
-				vc = vcs[Math.floor(Math.random() * vcs.length)]
-				console.log(vc)
+				var vcId = vcs[Math.floor(Math.random() * vcs.length)]
+				console.log(vcId)
 
 				// okay so we have our randomly chosen vc, next step
+				var vc = client.channels.fetch(vcId)
+					.then(channel => {
+						console.log(channel.name);
+					})
+					.catch(console.error);
+				console.log(vc)
 
 			}
 		});
@@ -119,16 +129,6 @@ client.on('message', message => { //check for message
 				//reply statements
 				case "help":
 					message.channel.send('i am fongus. red.')
-					break;
-				case "te":
-					console.log('teetetete')
-					superagent.get('http://python-manager:5000/')
-						.end((err, res) => {
-							if (err) {
-								return console.log(err);
-							}
-							console.log(res.body);
-						});
 					break;
 				case "rec":
 					var voiceChannel = message.member.voice.channel;

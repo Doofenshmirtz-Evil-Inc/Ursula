@@ -4,14 +4,13 @@
 
 import logging
 import os
-import threading
 from pathlib import Path
 
 import discord
 import requests
 from discord.ext import commands
 from dotenv import load_dotenv
-from flask import Flask, jsonify
+from flask import Flask
 from flask_restful import Api, Resource, reqparse
 
 import accountManager
@@ -76,13 +75,14 @@ class vcs(Resource):
         except:
             return NOT_OKAY_MSG
 
-        logger.debug(activeVcs)
         
-        activeVcsId = []
+        activeVcsId = ''
         for vc in activeVcs:
-            activeVcsId.append(vc.id)
+            activeVcsId = activeVcsId + str(vc.id) + ','
 
-        return str(activeVcsId)
+        logger.debug(activeVcsId)
+
+        return activeVcsId
 
     def post(self):
         """ this is stuff i grabbed from my alexascreencontrol repo, ill change it later """
