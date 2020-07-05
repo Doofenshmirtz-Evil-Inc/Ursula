@@ -13,6 +13,7 @@ services:
               dockerfile: Dockerfile
         container_name: nodejs-listener
         volumes:
+            - ./nodejs:/nodejs/
             - audio-volume:/audio
         networks:
             container-network:

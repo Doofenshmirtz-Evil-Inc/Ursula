@@ -4,6 +4,6 @@ WORKDIR /nodejs
 ADD index.js /nodejs/index.js
 ADD package.json /nodejs/package.json
 ADD keys.json /nodejs/keys.json
-RUN ["npm", "install", "discord.js-commando", "--save", "-g"]
-RUN ["npm", "install", "/nodejs", "-f"]
+# RUN ["npm", "install", "/nodejs", "-f"]
+RUN ["npm", "install", "/nodejs"]
 CMD [ "node", "/nodejs/index.js"]
