@@ -1,13 +1,12 @@
 var startTime = process.hrtime();
 //apis
-console.log("getting apis...");
+console.log("getting packages...");
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
 const Discord = require('discord.js');
 const superagent = require('superagent');
 const express = require("express");
-
 
 //pull keys file
 const keys = JSON.parse(fs.readFileSync('./keys.json')); //read all keys
@@ -17,7 +16,7 @@ var token = keys.discordtoken; //discord api key
 var botSudoId = keys.botsudo; //bot sudo id
 
 const port = '5001'
-var prefix = "s!"
+const prefix = "s!"
 
 var api = express();
 api.use(express.static(__dirname + '/'));
@@ -36,16 +35,16 @@ function generateOutputFile(channel, member) {
 	const fileName = `audio/${channel.id}-${member.id}-${Date.now()}.pcm`;
 	console.log('creating file')
 	return fs.createWriteStream(fileName)
-  }
+}
 
 const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitTimeInMs));
 
 function checkApi() {
-	console.log('checking api')
+	console.log('checking python api')
 	superagent.get('http://python-manager:5000/alive')
 		.end((err, res) => {
 			if (err) {
-				console.log('api not up, retrying in 5..');
+				console.log('python api not up, retrying in 5..');
 				sleep(5000).then(() => {
 					// This will execute  5 seconds from now
 					checkApi();
@@ -54,7 +53,8 @@ function checkApi() {
 			else {
 				console.log(res.body);
 				if (res.body == 'OKAY') {
-					startListening();
+					console.log('python api is alive')
+					return
 				}
 				else checkApi();
 			}
@@ -62,38 +62,24 @@ function checkApi() {
 }
 
 function startListening() { // main listening setup
-	// grab active vc ids from py api
-	superagent.get('http://python-manager:5000/vcs')
-		.end((err, res) => {
-			if (err) {
-				console.log(err)
-			} else {
-				// we now have the vcs, parse and choose one at random
-				var vcs = res.body.split(',')
-				console.log(vcs)
+	
+	vcs = activeVoiceChannels()
 
-				vcs.pop() // remove empty
+	if (vcs.length == 0) {
+		console.log('no vcs to join :(')
+		return
+	}
 
-				console.log(vcs);
+	var vc = vcs[Math.floor(Math.random() * vcs.length)]
 
-				if (vcs.length == 0) {
-					console.log('no vcs to join :(')
-					return
-				}
-
-				var vcId = vcs[Math.floor(Math.random() * vcs.length)]
-				console.log(vcId)
-
-				// okay so we have our randomly chosen vc, next step
-				var vc = client.channels.fetch(vcId)
-					.then(channel => {
-						console.log(channel.name);
-					})
-					.catch(console.error);
-				console.log(vc)
-
-			}
-		});
+	// okay so we have our randomly chosen vc, next step
+	console.log(vc.name);
+	vc.join()
+		.then(connection => {
+			console.log('Connected!')
+			connection.play('jingle.mp3')
+		})
+		.catch(console.error);
 
 	// OUTLINE FOR THINGS TODO:
 
@@ -104,12 +90,30 @@ function startListening() { // main listening setup
 	// tell the python thing that we wrote files
 }
 
+function activeVoiceChannels(bot = client) {
+	activeVCS = []
+	bot.channels.cache.each(channel => {	
+		if (channel.type == 'voice' && channel.members.array().length > 0) {
+			// ensure that the members are actually active
+			activeMembers = 0
+			channel.members.each(member => {
+				if (member.voice.mute == false) activeMembers += 1;
+			});
+
+			if (activeMembers > 0) {
+				console.log(`${channel.name} is a non-empty vc, has ${activeMembers} active members`);
+				activeVCS.push(channel)
+			}
+		}
+	});
+
+	return activeVCS
+}
+
 //ready?
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
-	console.log('waiting for python manager..')
-	checkApi()
-
+	
 	let updatePres = setInterval(function () {
 		client.user.setPresence({
 			game: {
@@ -119,6 +123,8 @@ client.on('ready', () => {
 		});
 	}, 60000);
 	updatePres;
+
+	startListening()
 });
 
 client.on('message', message => { //check for message

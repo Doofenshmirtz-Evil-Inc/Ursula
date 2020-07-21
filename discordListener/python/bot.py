@@ -6,9 +6,7 @@ import logging
 import os
 from pathlib import Path
 
-import discord
 import requests
-from discord.ext import commands
 from dotenv import load_dotenv
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
@@ -31,10 +29,8 @@ logger = logging.getLogger('bot')
 logger.setLevel('DEBUG')
 
 NOT_OKAY_MSG = 'NOT OKAY :('
-DESCRIPTION = '''ursula listens, ursula knows all'''
-bot = commands.Bot(command_prefix='$', description=DESCRIPTION)
 
-def activeVoiceChannels(bot=bot):
+def activeVoiceChannels(bot=None):
     activeVCS = []
     for guild in bot.guilds:
         for vc in guild.voice_channels:
@@ -51,10 +47,6 @@ def activeVoiceChannels(bot=bot):
                 
     logger.debug(f'found {len(activeVCS)} active voice channels')
     return activeVCS
-
-async def disconnectAll():
-    for vc in bot.voice_clients:
-        await vc.disconnect()
 
 # api
 
@@ -125,27 +117,5 @@ api.add_resource(vcs, '/vcs')
 api.add_resource(alive, '/alive')
 api.add_resource(account, '/account')
 
-def runApp():
-    app.run(host='0.0.0.0', port=5000, threaded=True)
-
-# on start
-@bot.event
-async def on_ready():
-    logger.info(f'Logged in as: {bot.user.name} - {bot.user.id}')
-    logger.info(f'Version: {discord.__version__}')
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game('TOM FONGUS\'s CRAaaaZY Racoon (2002)'))
-
-    # cleanup if it crashed or something earlier
-    await disconnectAll()
-    # appThread = threading.Thread(target=runApp)
-    # appThread.start()
-    runApp()
-    logger.debug('wewefwerer')
-    
-
-# login
-def runBot(key=os.getenv('BOTKEY'), isBot=True):
-    bot.run(key, bot=isBot)
-
 if __name__ == "__main__":
-    runBot()
+    app.run(host='0.0.0.0', port=5000, threaded=True)
